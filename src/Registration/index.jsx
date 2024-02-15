@@ -249,7 +249,7 @@ const Registration = () => {
 												</div>
 											</div>
 										</div>
-										<div className="text-center"><button type="button" className="btn brand-bg text-white px-5 mt-5  w-100" onClick={() => handleSubmit()} >Sign Up</button></div>
+										<div className="text-center"><button type="button" className="btn brand-bg text-white px-5 mt-5  w-50" onClick={() => handleSubmit()} >Sign Up</button></div>
 
 									</form>
 								</div>

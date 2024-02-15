@@ -37,7 +37,7 @@ const Login = () => {
                 <div className=" mb-5 font-weight-bold brand-color-text text-uppercase text-center">
                   New user? {" "}
                   <a className="text-decoration-none" href="/registration">
-                    Create an accoun
+                    Create an account
                   </a>
                 </div>
                 <form className="card-body cardbody-color p-lg-5">
@@ -63,7 +63,7 @@ const Login = () => {
                       onChange={(e) => setPassword(e.target.value)}
                     />
                   </div>
-                  <div className="text-center"><button type="button" className="btn brand-bg text-white px-5 mt-5  w-100" onClick={() => login()} >Login</button></div>
+                  <div className="text-center "><button type="button" className="btn brand-bg text-white px-5 mt-5 w-50" onClick={() => login()} >Login</button></div>
                 </form>
               </div>
               <div className='col-md-6 d-flex'>
