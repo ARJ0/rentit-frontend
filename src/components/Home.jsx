@@ -37,17 +37,17 @@ function Home() {
             </div>
             <div class="card" style={{"width": "18rem"}}>
               <div class="card-body">
-              <img class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQncAbz3NMYd4ccK27UZA3nQEIoLDT4wIDSQ&usqp=CAU" alt="Card image cap" />
-
-                <p class="card-text mt-5">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <img class="card-img-top" src="https://img.freepik.com/free-photo/heavy-excavator-digging-day-light_23-2149194835.jpg?w=1380&t=st=1708614325~exp=1708614925~hmac=bb6d1d467f538c52c59784f3999f55b15b682efffd5eb008f981bedbb79771fd" alt="Card image cap" />
+                {/* image source : url - https://www.freepik.com/free-photo/heavy-excavator-digging-day-light_20828280.htm#query=jcb&position=28&from_view=search&track=ais&uuid=e21fe950-3584-41e2-8c91-49bb32683260 */}
+                <p class="card-text mt-5">Heavy Excavator</p>
 
               </div>
             </div>
             <div class="card" style={{"width": "18rem"}}>
               <div class="card-body">
-              <img class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2wmSR0uQOKzVfrxbMJjmv_gEhyp0lurVQqw&usqp=CAU" alt="Card image cap" />
-
-                <p class="card-text mt-5">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <img class="card-img-top" src="https://img.freepik.com/free-photo/full-shot-man-construction-site_23-2148751969.jpg?w=1380&t=st=1708614466~exp=1708615066~hmac=69bff5aaa55d4c43b265ca6008e219ea52f9faa62e6b5fdba01e126bd4b45e98" alt="Card image cap" />
+              {/* image source : url - https://www.freepik.com/free-photo/full-shot-man-construction-site_11106646.htm#page=2&query=Road%20roller&position=16&from_view=search&track=ais&uuid=ecf8c2e7-4485-4ca1-b040-8e482772a51f */}
+                <p class="card-text mt-5">Road Roller</p>
 
               </div>
             </div>
