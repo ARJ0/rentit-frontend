@@ -3,9 +3,9 @@ import Select from "react-select";
 import CloudUploadIcon from '@mui/icons-material/CloudUpload';
 import { toaster } from '../services/toaster';
 import { addEquipment } from '../services/actionCreator';
-import firebaseUpload from '../services/firbaseUpload';
 import { equipmentCategories } from '../services/helper';
 import { useNavigate } from 'react-router-dom';
+import firebaseUpload from '../services/firebaseUpload';
 
 const AddEquipment = () => {
   const [img, setImg] = useState();
