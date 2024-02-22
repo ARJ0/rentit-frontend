@@ -20,7 +20,7 @@ function Home() {
           <h1>
             Get The Goods that You need
           </h1>
-          <Link className='brand-bg text-white exploreBtn' to='/home'>
+          <Link className='brand-bg text-white exploreBtn' to='/explore'>
             Explore Now
           </Link>
         </div>
