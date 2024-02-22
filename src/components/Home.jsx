@@ -16,7 +16,8 @@ function Home() {
         exit={{ opacity: 0 }}
         transition={{ duration: .2 }}
       >
-        <div className="top flex-col hero" style={{ backgroundImage: `url(https://estec-trade.com/images/slider/thumb-100/Tl84wOF6buX_uWHCLSSG0Lp_0O3gkh1W.webp)` }}>
+        <div className="top flex-col hero" style={{ backgroundImage: `url(https://img.freepik.com/free-photo/3d-crane-against-sunset-sky_1048-7298.jpg?w=1480&t=st=1708613815~exp=1708614415~hmac=3e72256cd084605c203c148a255627ab8a5c83a998ba530fd13e246c8975092e)` }}> 
+        {/* image source : url - https://www.freepik.com/free-photo/3d-crane-against-sunset-sky_1594716.htm#query=crane%20banner&position=0&from_view=search&track=ais&uuid=274c1463-efb9-4a3e-a6ab-3db9945a4b55 */}
           <h1>
             Get The Goods that You need
           </h1>
@@ -29,8 +30,9 @@ function Home() {
           <div className="why flex">
             <div class="card" style={{"width": "18rem"}}>
               <div class="card-body">
-              <img class="card-img-top" src="https://www.shutterstock.com/image-photo/balzac-alberta-canada-september-27-600nw-2367609529.jpg" alt="Card image cap" />
-                <p class="card-text mt-5">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <img class="card-img-top" src="https://img.freepik.com/free-photo/logistic-center-with-forklift_23-2148902599.jpg?w=1380&t=st=1708614165~exp=1708614765~hmac=a4f88686f034df5675fc04c90ead6837333ced14cf44dca94577265a57165d04" alt="Card image cap" />
+              {/* image source : url - https://www.freepik.com/free-photo/logistic-center-with-forklift_13291114.htm#query=forklift&position=20&from_view=search&track=sph&uuid=4845b341-667e-456f-87de-3b68c74fc652 */}
+                <p class="card-text mt-5">Forklift</p>
               </div>
             </div>
             <div class="card" style={{"width": "18rem"}}>
