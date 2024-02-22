@@ -172,24 +172,20 @@
   min-height: 500px;
   width: 100%;
   padding: 1em;
-  border-radius: 1em;
-  box-shadow: 0 0 8px 0.1px gray;
-  transition: 0.5s all ease-in-out;
+  border-radius: 0.5em;
+  border: 1px solid gray;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   gap: 0.2em;
 }
-.prodCard:hover {
-  box-shadow: inset 0 0 8px 0.1px gray;
-}
 .prodCard img {
   width: 100%;
   height: 250px;
   -o-object-fit: cover;
      object-fit: cover;
-  border-radius: 1em !important;
+  border-radius: 0.5em !important;
   margin-bottom: 10px;
 }
 .prodCard .price {
@@ -1756,14 +1752,74 @@ input[type=number] {
   .brand-bg {
     background-color: #0C056D !important;
   }
-  
-  
   .mr-20px {
     margin-top: 20px !important;
   }
   .h-600 {
     height: 600px !important;
   }
+  .react-mapbox-ac-suggestion {
+    position: absolute;
+    top: 65%;
+    background-color: #fff;
+    width: 50%;
+    z-index: 1;
+    box-shadow: 0 0 13px 1px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    padding: 10px 15px;
+    z-index: 2;
+    max-height: 170px;
+    overflow: auto;
+  }
+  .react-mapbox-city-suggestion {
+    position: absolute;
+    top: 76%;
+    background-color: #fff;
+    width: 50%;
+    z-index: 1;
+    box-shadow: 0 0 13px 1px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    padding: 10px 15px;
+    z-index: 2;
+    max-height: 170px;
+    overflow: auto;
+  }
+  .react-mapbox-state-suggestion {
+    position: absolute;
+    top: 76%;
+    background-color: #fff;
+    width: 50%;
+    z-index: 1;
+    box-shadow: 0 0 13px 1px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    padding: 10px 15px;
+    z-index: 2;
+    max-height: 170px;
+    overflow: auto;
+  }
+
+
+  .navbar-brand img {
+    width: 165px;
+  }
+  .navbar-nav {
+    align-items: center;
+  }
+  .navbar .navbar-nav .nav-link {
+    color: #fff;
+    font-size: 1.1em;
+    padding: 0.5em 1em;
+  }
+  @media screen and (min-width: 768px) {
+    .navbar-brand img {
+      width: 165px;
+    }
+    .navbar-brand {
+      margin-right: 0;
+      padding: 0 1em;
+    }
+  }
+  
   
 .fullpage {
   min-height: 100vh;
