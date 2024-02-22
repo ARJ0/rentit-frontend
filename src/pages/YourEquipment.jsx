@@ -1,8 +1,9 @@
-import React, { useEffect } from 'react'
-import Explore from './Explore'
+import React, { useEffect, useState } from 'react'
+import FilterAltIcon from '@mui/icons-material/FilterAlt';
 import { getEquipmentByCompnyId } from '../services/actionCreator'
 import { toaster } from '../services/toaster'
-import { getlocalStorage } from '../services/helper'
+import { getlocalStorage, equipmentCategories } from '../services/helper'
+import EquipmentCard from '../components/EquipmentCard'
 
 export const YourEquipment = () => {
 
