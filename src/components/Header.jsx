@@ -33,7 +33,7 @@ const Header = () => {
               <img src={logo} alt="" />
             </a>
             {flag.user && <li className="nav-item">
-              <a className="nav-link" href="#">Add to Card</a>
+              <a className="nav-link" href="#">Cart</a>
             </li>}
             {flag.company &&
               <>
