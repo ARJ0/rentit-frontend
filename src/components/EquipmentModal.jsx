@@ -1,54 +1,81 @@
-import React from 'react'
-import Modal from 'react-modal';
-import { equipmentCategoriesTypeName } from '../services/helper';
+import React, { useState } from 'react';
+import Modal from 'react-bootstrap/Modal';
+import { accountType, equipmentCategoriesTypeName, getlocalStorage } from '../services/helper';
+import { addToCart, getCart } from '../services/actionCreator';
 
-const customStyles = {
-    content: {
-        top: '50%',
-        left: '50%',
-        right: 'auto',
-        bottom: 'auto',
-        marginRight: '-50%',
-        transform: 'translate(-50%, -50%)',
-    },
-};
+import ShoppingCartCheckoutIcon from '@mui/icons-material/ShoppingCartCheckout';
 
 const EquipmentModal = ({ closeModal, selecetedItem }) => {
-    const { id, title, category, rent, available, image, location, timeperiod, borrowerid, age, description } = selecetedItem;
+    const { title, category, rent, image, timeperiod, borrowerid, age, description, unavailableUntil } = selecetedItem;
+    const [isLoading, setIsLoading] = useState(false)
+    const _userData = getlocalStorage("loggedUser")
+    const flag = accountType();
+    const _addToCart = (item) => {
+        const params = {
+            equipmentId: item?._id,
+            userId: _userData?._id
+        }
+        setIsLoading(true);
+        addToCart(params).then((data) => {
+            setIsLoading(false);
+            closeModal()
+        }).catch((err) => {
+            setIsLoading(false);
+            console.log("🚀 ~ addToCart ~ ̥:", err)
+
+        })
+    }
     return (
         <>
-
             <Modal
-                isOpen={true}
-                contentLabel="Example Modal"
-                style={customStyles}
+                show={true}
+                size="lg"
+                aria-labelledby="contained-modal-title-vcenter"
+                centered
             >
-                <div className='d-flex justify-content-end'>
-                    <button className='btn btn-close' onClick={() => closeModal()}></button>
-                </div>
-                <div className='d-flex w-100'>
+                <Modal.Header>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" onClick={closeModal} aria-label="Close"></button>
+                {/* <button className='btn btn-light' disabled={isLoading} onClick={closeModal}>Close</button> */}
+                </Modal.Header>
+                <Modal.Body>
+                    <div id="container">
+                        <div className="product-details">
 
-                    <div className='w-100 prodCard border-0'>
-                        <img src={image} alt={title} className="card-img-top custom-card-img" />
+                            <h1 className='text-capitalize'>{title}</h1>
+                            <div className='info-div'>
+                                <p className="information">{description}</p>
+                            </div>
+                            <div className="control">
+                                <button className="btn-model">
+                                    <span className="price">$ {rent}</span>
+                                    <span className="shopping-cart"><ShoppingCartCheckoutIcon /></span>
+                                    <span className="buy" onClick={() => _addToCart(selecetedItem)} >Get now</span>
+                                </button>
 
-                    </div>
-                    <div className='w-50 m-4'>
-
-                        <div className="card-body">
-                            <p className="card-text">Type: {equipmentCategoriesTypeName[category]}</p>
-                            <p className="card-text">Rental Rate: ${rent.toFixed(2)} {" "} {timeperiod} </p>
-                            <p className={`card-text ${!borrowerid ? 'text-success' : 'text-danger'}`}>{!borrowerid ? 'Available' : 'Not Available'}</p>
+                            </div>
                         </div>
-                        <p>Year of Manufacture: {age}</p>
-                            <p>Description:</p>
-                            <p className="card-text text-wrap">{description}</p>
-                        <div>
-                        <button type="button" className='btn brand-bg btn-lg text-white'>Add Bag</button>
-                    </div>
-                    </div>
-                </div>
-            </Modal>
 
+                        <div className="product-image">
+
+                            <img src={image} alt="" />
+                            <div className="info">
+                                <h2> Description</h2>
+                                <ul>
+                                    <li><strong>Height : </strong>5 Ft </li>
+                                    {/* <li><strong>Shade : </strong>Olive green</li> */}
+                                    <li><strong>Decoration: </strong>balls and bells</li>
+                                    <li><strong>Material: </strong>Eco-Friendly</li>
+
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+                </Modal.Body>
+                {/* <Modal.Footer>
+                    <button className='btn btn-light' disabled={isLoading} onClick={closeModal}>Close</button>
+                </Modal.Footer> */}
+            </Modal>
         </>
     )
 }
