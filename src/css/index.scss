@@ -11,30 +11,8 @@ $lred :#EE8888;
 $dred : #BB0303;
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;700;800&display=swap');
-@import './components/_button.scss';
-@import './components/_footer.scss';
-@import './components/_header.scss';
-@import './components/_input.scss';
-@import './components/_logo.scss';
-@import './components/productCard';
-@import './components/chatBubble';
-@import './components/chatHistory';
 
-
-
-@import './pages/_addProduct.scss';
-@import './pages/_editProfile.scss';
-@import './pages/_home.scss';
-@import './pages/_myTools.scss';
-@import './pages/_queries.scss';
-@import './pages/_signup.scss';
-@import './pages/_login.scss';
-@import './pages/_explore.scss';
-@import './pages/productpage';
-@import './pages/assignProduct';
-@import './pages/addReview';
-@import './components/loder';
-@import './pages/productRequest';
+@import './card';
 
 
 
