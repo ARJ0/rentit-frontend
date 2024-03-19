@@ -15,10 +15,6 @@ function Home() {
   return (
     <>
       <div className='page home'
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
-        transition={{ duration: .2 }}
       >
         <div className="top flex-col hero" style={{ backgroundImage: `url(${home_banner})` }}> 
         {/* image source : url - https://www.freepik.com/free-photo/3d-crane-against-sunset-sky_1594716.htm#query=crane%20banner&position=0&from_view=search&track=ais&uuid=274c1463-efb9-4a3e-a6ab-3db9945a4b55 */}

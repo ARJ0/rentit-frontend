@@ -33,12 +33,12 @@ const Login = () => {
       })
   }
   return (
-    <div className="container">
+    <div className="container page">
     <div className="row">
       <div className="col-md-6 mx-auto">
-        <div className="card my-5 d-flex">
+        <div className="card my-5 d-flex text-left">
           <div className="row">
-            <div className='col-md-12'>
+            <div className='col-md-12 '>
               <h2 className="text-dark mt-5 text-center">Sign In</h2>
               <div className=" mb-5 font-weight-bold brand-color-text text-uppercase text-center">
                 New user?{" "}

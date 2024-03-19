@@ -56,7 +56,13 @@ const Registration = () => {
 				navigate('/');
 			})
 			.catch((err) => {
-				toaster(err?.response?.data, 'error');
+				if (err?.response?.data?.errors && err?.response?.data?.errors?.length > 0) {
+					err?.response?.data?.errors.map((err) => {
+						return toaster(err, 'error');
+					})
+				} else {
+					toaster(err?.response?.data, 'error');
+				}
 				console.log('error -=-=-= ', err);
 			});
 	};
@@ -146,7 +152,7 @@ const Registration = () => {
 
 	return (
 		<>
-			<div className="container">
+			<div className="container page">
 				<div className="row">
 					<div className="col-md-6 mx-auto">
 						<div className="card my-5 d-flex">
@@ -208,7 +214,10 @@ const Registration = () => {
 															value={formData.fname}
 															placeholder="Enter your first name"
 															className="form-control"
-															onChange={(e) => updateFromData(e, 'fname')}
+															onChange={(e) => {
+																if(!/^[A-Za-z]*$/.test(e.target.value)) return;
+																updateFromData(e, 'fname')
+															}}
 														/>
 													</div>
 												</div>
@@ -228,7 +237,10 @@ const Registration = () => {
 															value={formData.lname}
 															placeholder="Enter your last name"
 															required
-															onChange={(e) => updateFromData(e, 'lname')}
+															onChange={(e) => {
+																if(!/^[A-Za-z]*$/.test(e.target.value)) return;
+																updateFromData(e, 'lname')
+															}}
 														/>
 													</div>
 												</div>
@@ -252,7 +264,10 @@ const Registration = () => {
 															placeholder="Enter your company"
 															className="form-control"
 															required
-															onChange={(e) => updateFromData(e, 'company_name')}
+															onChange={(e) => {
+																if(!/^[A-Za-z]*$/.test(e.target.value)) return;
+																updateFromData(e, 'company_name')
+															}}
 														/>
 													</div>
 												</div>
@@ -277,6 +292,14 @@ const Registration = () => {
 														className="form-control"
 														required
 														onChange={(e) => updateFromData(e, 'email')}
+														onBlur={(e) => {
+																const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+																if (!emailRegex.test(e.target.value)) {
+																	setFromData({...formData, email: ""})
+																	toaster("Invalid Eamil !!", "error");
+																	return;
+																}
+														}}
 													/>
 												</div>
 											</div>
@@ -298,6 +321,18 @@ const Registration = () => {
 														className="form-control"
 														required
 														onChange={(e) => updateFromData(e, 'mobile')}
+														onBlur={(e) => {
+															const numberLength = e.target.value.toString().length;
+															if (numberLength > 10) {
+																setFromData({...formData, mobile: ""})
+																toaster("The number is more than 10 digits","error");
+																return;
+															} else if (numberLength < 10) {
+																setFromData({...formData, mobile: ""})	
+																toaster("The number is less than 10 digits.", "error");
+																return;
+															}
+														}}
 													/>
 												</div>
 											</div>

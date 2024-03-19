@@ -82,6 +82,114 @@ const CheckOutModal = ({ closeModal, item }) => {
                     <div className="container">
                         <div className="my-4">
                             <div className="row">
+                                <div className='col-md-12 mb-4' id='pdf'>
+                                    <div className="invoice-container">
+                                        <div className="receipt-main col-xs-10 col-sm-10 col-md-12 col-xs-offset-1 col-sm-offset-1 col-md-offset-3">
+                                            <div className="row">
+                                                <div className="receipt-header">
+                                                    <div className="col-xs-6 col-sm-6 col-md-6">
+                                                        <div className="receipt-left">
+                                                            <h1>Invoice</h1>
+                                                        </div>
+                                                    </div>
+                                                    <div className="col-xs-6 col-sm-6 col-md-6 text-right mr-5">
+                                                        <div className="receipt-right text-xl-end">
+                                                            <h5>Company Info</h5>
+                                                            <p>{item.companyId.company_name}</p>
+                                                            <p>+1 {item.companyId.mobile} <i className="fa fa-phone"></i></p>
+                                                            <p>{item.companyId.email} <i className="fa fa-envelope-o"></i></p>
+                                                            <p>{item.companyId.address} <i className="fa fa-location-arrow"></i></p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div className="row">
+                                                <div className="receipt-header receipt-header-mid">
+                                                    <div className="col-xs-8 col-sm-8 col-md-8 text-left">
+                                                        <div className="receipt-right text-start">
+                                                            <h5>Customer Info</h5>
+                                                            <p>{userData.fname} ${userData.lname}</p>
+                                                            <p>+1 {userData.mobile}</p>
+                                                            <p>{userData.email}</p>
+                                                            <p>{userData.address}</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <table className="table table-bordered">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Description</th>
+                                                            <th>Amount </th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td className="col-md-9">
+                                                                <h4><b>Equipment Info :-</b></h4>
+                                                                <p><b>Name :</b>{item.equipmentId.title}</p>
+                                                                <p><b>Type :</b>{equipmentCategoriesTypeName[item.equipmentId.category]}</p>
+                                                                <p><b>Description :</b>{item.equipmentId.description}</p>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td className="col-md-9">Per Day Rent </td>
+                                                            <td className="col-md-3"><i className="fa fa-inr"></i> $ {item.equipmentId.rent}</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td className="col-md-9">
+                                                                Total days
+                                                            </td>
+                                                            <td className="col-md-3"><i className="fa fa-inr"></i> {moment(item.endDate).diff(item.startDate, 'days') + 1} Days</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td className="text-right">
+                                                                <p>
+                                                                    <strong>Total Amount: </strong>
+                                                                </p>
+                                                                <p>
+                                                                    <strong>Insurance Fees: </strong>
+                                                                </p>
+                                                            </td>
+                                                            <td>
+                                                                <p>
+                                                                    <strong><i className="fa fa-inr"></i> $ {item.totalRent}</strong>
+                                                                </p>
+                                                                <p>
+                                                                    <strong><i className="fa fa-inr"></i> $ 100</strong>
+                                                                </p>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td className="text-right">
+                                                                <h2><strong>Payable Amount: </strong></h2>
+                                                            </td>
+                                                            <td className="text-left text-danger">
+                                                                <h2><strong><i className="fa fa-inr"></i> $ {item.totalRent + 100}</strong></h2>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                            <div className="row">
+                                                <div className="receipt-header receipt-header-mid receipt-footer">
+                                                    <div className="col-xs-8 col-sm-8 col-md-8 text-left">
+                                                        <div className="receipt-right text-start">
+                                                            <p><b>Date :</b> {moment().format('LL')}</p>
+                                                            <h5 style={{"color": "rgb(140, 140, 140)"}}>Thanks for renting.!</h5>
+                                                        </div>
+                                                    </div>
+                                                    <div className="col-xs-4 col-sm-4 col-md-4">
+                                                        <div className="receipt-left">
+                                                            <h1 style={{"color": "rgb(140, 140, 140)"}}>Stamp</h1>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                                 <div className="col-md-3 mb-4">
                                     <div className="form-group">
                                         <label htmlFor="personName">Name :</label>
