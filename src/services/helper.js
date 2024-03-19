@@ -18,13 +18,13 @@ export const equipmentCategoriesTypeName = {
     heavy_machinery:"Heavy Machinery",
     tools:"Tools",
     construction: "Construction",
-    aerial:"Aerial",
-    air_compressors_tools:"Air Compressors and Tools"
+    earth_movers:"Earth Movers",
+    snow_removal:"Snow removal"
 }
 export const equipmentCategories = [
     { label: "Heavy Machinery", value: "heavy_machinery" },
     { label: "Tools", value: "tools" },
     { label: "Construction", value: "construction" },
-    { label: "Aerial", value: "aerial" },
-    { label: "Air Compressors and Tools", value: "air_compressors_tools" },
+    { label: "Earth Movers", value: "earth_movers" },
+    { label: "Snow Removal", value: "snow_removal" },
   ];

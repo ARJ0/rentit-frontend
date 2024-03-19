@@ -27,6 +27,7 @@ function App() {
         <Route path="/explore" element={<Explore />} />
         <Route path="/your-equipment" element={<YourEquipment/>} />
         <Route path="/your-request" element={<Request/>} />
+        {/* <Route path="/pdf" element={<PdfGenerator/>} /> */}
       </Route>
     </Routes>
     </div>
