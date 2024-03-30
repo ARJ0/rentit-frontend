@@ -66,16 +66,10 @@ return `
                      <p>
                         <strong>Total Amount: </strong>
                      </p>
-                     <p>
-                        <strong>Insurance Fees: </strong>
-                     </p>
                   </td>
                   <td>
                      <p>
                         <strong><i class="fa fa-inr"></i> $ ${item.totalRent}</strong>
-                     </p>
-                     <p>
-                        <strong><i class="fa fa-inr"></i> $ 100</strong>
                      </p>
                   </td>
                </tr>

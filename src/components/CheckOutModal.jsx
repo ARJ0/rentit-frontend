@@ -7,6 +7,7 @@ import moment from "moment";
 import '../PDF/pdf.css'
 import { PDFCSS, PDFHTML } from '../PDF/PdfGenerator';
 import html2pdf from "js-html2pdf";
+import PayPalButton from './PayPalButton';
 
 const CheckOutModal = ({ closeModal, item }) => {
     let userData = getlocalStorage("loggedUser")
@@ -17,7 +18,7 @@ const CheckOutModal = ({ closeModal, item }) => {
     const [email, setEmail] = useState('')
     const [isLoading, setIsLoading] = useState(false);
 
-    const _checkOutEquipment = () => {
+    const _checkOutEquipment = (_equipment) => {
         const _userData = getlocalStorage("loggedUser");
         if (!personName || !personNumber || !email) {
             toaster("Please fill all the details", "error")
@@ -25,7 +26,7 @@ const CheckOutModal = ({ closeModal, item }) => {
         }
         setIsLoading(true)
         const params = {
-            equipmentId: item?.equipmentId?._id,
+            equipmentId: _equipment?.equipmentId?._id,
             userId: _userData?._id,
             isCheckOut: true,
             personName,
@@ -148,16 +149,10 @@ const CheckOutModal = ({ closeModal, item }) => {
                                                                 <p>
                                                                     <strong>Total Amount: </strong>
                                                                 </p>
-                                                                <p>
-                                                                    <strong>Insurance Fees: </strong>
-                                                                </p>
                                                             </td>
                                                             <td>
                                                                 <p>
                                                                     <strong><i className="fa fa-inr"></i> $ {item.totalRent}</strong>
-                                                                </p>
-                                                                <p>
-                                                                    <strong><i className="fa fa-inr"></i> $ 100</strong>
                                                                 </p>
                                                             </td>
                                                         </tr>
@@ -259,6 +254,11 @@ const CheckOutModal = ({ closeModal, item }) => {
                                     </div>
                                 </div>
                             </div>
+                            <div className='col-md-12 w-100 mb-4 d-flex justify-content-center'>
+                            <div className='col-md-3 mb-4'>
+                                    <PayPalButton equipment={item} checkOutEquipment={_checkOutEquipment} />
+                                </div>
+                                </div>
                         </div>
                     </div>
 
@@ -273,13 +273,14 @@ const CheckOutModal = ({ closeModal, item }) => {
                     >
                         Download Invoice
                     </button>
-                    <button
+                    {/* <button
                         className="btn btn-primary blue"
                         onClick={_checkOutEquipment}
                         disabled={isLoading}
                     >
                         Check Out
-                    </button>
+                    </button> */}
+                    
                 </Modal.Footer>
             </Modal>
         </>
