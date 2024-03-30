@@ -244,3 +244,19 @@ export function getAllUserRequest(params) {
       });
   });
 }
+
+
+export function createPayPalOrder(params) {
+  const url = '/paypal/create-order';
+  const headers = { withCredentials: true };
+  return new Promise((resolve, reject) => {
+    HTTP('post', url, params, headers)
+      .then((result) => {
+        if (result)
+          resolve(result.data)
+      })
+      .catch((error) => {
+        reject(error);
+      });
+  });
+}
