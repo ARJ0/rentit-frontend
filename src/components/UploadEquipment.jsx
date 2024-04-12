@@ -101,10 +101,10 @@ const UploadEquipment = ({closeModal}) => {
                                     ) : (
                                         <img src={preview || ""} className="avatar img-fluid mb-3" alt="" />
                                     )}
-                                    <label htmlFor="image" className="btn btn-primary">
+                                    <label htmlFor="upload-image" className="btn btn-primary">
                                         <CloudUploadIcon className="me-2" /> Upload Image
                                         <input
-                                            id="image"
+                                            id="upload-image"
                                             type="file"
                                             className="form-control visually-hidden"
                                             onChange={(e) => handleFile(e)}
@@ -149,6 +149,7 @@ const UploadEquipment = ({closeModal}) => {
                                     <Select
                                         id="category"
                                         className="select"
+                                        aria-label="category"
                                         options={equipmentCategories}
                                         onChange={(selectedOptions) =>
                                             setcategory(selectedOptions.value)
