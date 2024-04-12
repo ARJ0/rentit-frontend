@@ -195,7 +195,7 @@ const CheckOutModal = ({ closeModal, item }) => {
                                             value={personName}
                                             required
                                             onChange={(e) => {
-                                                if (!/^[A-Za-z]*$/.test(e.target.value)) return;
+                                                if (!/^[A-Za-z\s]*$/.test(e.target.value)) return;
                                                 setPersonName(e.target.value)
                                             }}
                                         />
@@ -256,7 +256,7 @@ const CheckOutModal = ({ closeModal, item }) => {
                             </div>
                             <div className='col-md-12 w-100 mb-4 d-flex justify-content-center'>
                             <div className='col-md-3 mb-4'>
-                                    <PayPalButton equipment={item} checkOutEquipment={_checkOutEquipment} />
+                                    <PayPalButton equipment={item} isDisabled={!personName || !personNumber || !email} checkOutEquipment={_checkOutEquipment} />
                                 </div>
                                 </div>
                         </div>
