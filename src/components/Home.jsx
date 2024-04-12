@@ -37,7 +37,7 @@ function Home() {
             </div>
             <div class="card" style={{"width": "18rem"}}>
               <div class="card-body">
-              <img class="card-img-top" src={heavy_excavator} alt="Card image cap" />
+              <img class="card-img-top" src={heavy_excavator} alt="heavy_excavator" />
                 {/* image source : url - https://www.freepik.com/free-photo/heavy-excavator-digging-day-light_20828280.htm#query=jcb&position=28&from_view=search&track=ais&uuid=e21fe950-3584-41e2-8c91-49bb32683260 */}
                 <p class="card-text mt-5">Heavy Excavator</p>
 
@@ -45,7 +45,7 @@ function Home() {
             </div>
             <div class="card" style={{"width": "18rem"}}>
               <div class="card-body">
-              <img class="card-img-top" src={road_roller} alt="Card image cap" />
+              <img class="card-img-top" src={road_roller} alt="road_roller" />
               {/* image source : url - https://www.freepik.com/free-photo/full-shot-man-construction-site_11106646.htm#page=2&query=Road%20roller&position=16&from_view=search&track=ais&uuid=ecf8c2e7-4485-4ca1-b040-8e482772a51f */}
                 <p class="card-text mt-5">Road Roller</p>
 

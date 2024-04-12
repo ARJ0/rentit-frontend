@@ -50,50 +50,50 @@ const Footer = () => {
 
             <div className="col-md-4 col-lg-4 col-xl-4 mx-auto mb-4 mt-5">
               <div className='mt-5'>
-                <a
-                  className="btn text-white btn-floating m-1"
-                  style={{ "background-color": "#3b5998" }}
-                  href="http://www.facebook.com/" target="_blank"
-                  aria-label="FacebookIcon"
-                ><FacebookIcon /></a>
+              <a
+                className="btn text-white btn-floating m-1"
+                style={{ "background-color": "#3b5998" }}
+                href="http://www.facebook.com/" target="_blank"
+                aria-label="FacebookIcon"
+              ><FacebookIcon /></a>
 
-                <a
-                  className="btn text-white btn-floating m-1"
-                  style={{ "background-color": "#55acee" }}
-                  href="http://www.twitter.com/" target="_blank"
-                  aria-label="x"
-                ><XIcon /></a>
+              <a
+                className="btn text-white btn-floating m-1"
+                style={{ "background-color": "#55acee" }}
+                href="http://www.twitter.com/" target="_blank"
+                aria-label="x"
+              ><XIcon /></a>
 
-                <a
-                  className="btn text-white btn-floating m-1"
-                  style={{ "background-color": "#dd4b39" }}
-                  href="http://www.gmail.com/" target="_blank"
-                  aria-label="GoogleIcon"
-                ><GoogleIcon /></a>
+              <a
+                className="btn text-white btn-floating m-1"
+                style={{ "background-color": "#dd4b39" }}
+                href="http://www.gmail.com/" target="_blank"
+                 aria-label="GoogleIcon"
+              ><GoogleIcon /></a>
 
-                <a
-                  className="btn text-white btn-floating m-1"
-                  style={{ "background-color": "#ac2bac" }}
-                  href="http://www.instagram.com/" target="_blank"
-                  aria-label="InstagramIcon"
-                ><InstagramIcon /></a>
-                <a
-                  className="btn text-white btn-floating m-1"
-                  style={{ "background-color": "#0082ca" }}
-                  href="https://www.linkedin.com/" target="_blank"
-                  aria-label="LinkedInIcon"
-                ><LinkedInIcon /></a>
-                <a
-                  className="btn text-white btn-floating m-1"
-                  style={{ "background-color": "#333333" }}
-                  href="https://github.com/" target="_blank"
-                  aria-label="GitHubIcon"
-                ><GitHubIcon /></a></div>
-              <div className="" style={{ "margin-top": "15%" }}>
-                © 2024 Rentit. All Rights Reserved.
-              </div>
+              <a
+                className="btn text-white btn-floating m-1"
+                style={{ "background-color": "#ac2bac" }}
+                href="http://www.instagram.com/" target="_blank"
+                 aria-label="InstagramIcon"
+              ><InstagramIcon /></a>
+              <a
+                className="btn text-white btn-floating m-1"
+                style={{ "background-color": "#0082ca" }}
+                href="https://www.linkedin.com/" target="_blank"
+                 aria-label="LinkedInIcon"
+              ><LinkedInIcon /></a>
+              <a
+                className="btn text-white btn-floating m-1"
+                style={{ "background-color": "#333333" }}
+                href="https://github.com/" target="_blank"
+                 aria-label="GitHubIcon"
+              ><GitHubIcon /></a></div>
+              <div className="" style={{"margin-top": "15%"}}>
+        © 2024 Rentit. All Rights Reserved.
+      </div>
             </div>
-
+            
           </div>
 
         </div>
@@ -101,7 +101,7 @@ const Footer = () => {
 
 
 
-
+      
     </footer>
   )
 }

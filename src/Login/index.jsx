@@ -56,6 +56,7 @@ const Login = () => {
                     value={email}
                     required
                     onChange={(e) => setEmail(e.target.value)}
+                    aria-label="email"
                   />
                 </div>
                 <div className="mb-3">
@@ -65,6 +66,7 @@ const Login = () => {
                     id="password"
                     placeholder="Password"
                     value={password}
+                    aria-label="Password"
                     onChange={(e) => setPassword(e.target.value)}
                   />
                 </div>

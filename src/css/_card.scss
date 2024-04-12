@@ -48,22 +48,15 @@ h2{
   font-weight: 500;
 }
 
-ul{
-    display: flex;
-    flex-wrap: wrap;
-
-    list-style: none;
-    padding:0;
-  
   .booking-card{
     position: relative;
-    width: 300px;
+    // width: 300px;
     display: flex;
     flex: 0 0 300px;
     flex-direction: column;
     border: 3px solid #f0f0f0;
     
-    margin: 50px;
+    // margin: 50px;
     margin-bottom: 30px;
     // background-color: #f0f0f0;
     @include radius(10px);
@@ -226,11 +219,10 @@ ul{
       @include cardsOpen();
     }
   }
-}
 
 @media (max-width: 768px) {
   ul {
-    .booking-card{
+    .booking-card-list{
       @include cardsOpen();
     }
   }

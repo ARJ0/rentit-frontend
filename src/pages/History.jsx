@@ -60,7 +60,7 @@ const History = ({ closeSidebar }) => {
   return (
     <>
       <div className="position-fixed top-0 z-1031 end-0 w-50 h-100 bg-light d-flex flex-column">
-        <button className="btn align-self-start m-2 p-1" onClick={closeSidebar}><CloseIcon /></button>
+        <button className="btn align-self-start m-2 p-1" aria-label="Close sidebar" onClick={closeSidebar}><CloseIcon /></button>
         <div className="p-3 min-vh-100" style={{ "overflow": "auto" }}>
           {isLoading && <Loader />}
           <div className="row">

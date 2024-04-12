@@ -175,11 +175,12 @@ const Registration = () => {
 													<input
 														class="form-check-input"
 														type="radio"
+														id="inlineRadio1"
 														checked={accountType === 0 ? true : false}
 														value="company"
 														onChange={() => setAccountType(0)}
 													/>
-													<label class="form-check-label" for="inlineRadio1">
+													<label class="form-check-label" htmlFor="inlineRadio1" for="inlineRadio1">
 														Company
 													</label>
 												</div>
@@ -187,11 +188,12 @@ const Registration = () => {
 													<input
 														class="form-check-input"
 														type="radio"
+														id="inlineRadio2"
 														checked={accountType === 1 ? true : false}
 														value="user"
 														onChange={() => setAccountType(1)}
 													/>
-													<label class="form-check-label" for="inlineRadio2">
+													<label class="form-check-label"  htmlFor="inlineRadio2" for="inlineRadio2">
 														User
 													</label>
 												</div>
@@ -202,15 +204,15 @@ const Registration = () => {
 												<div className="col-md-6">
 													<div className="form-group">
 														<label
-															id="name-label"
 															className="mb-1"
-															for="name"
+															for="fname-label"
 														>
 															First Name
 														</label>
 														<input
 															type="text"
-															name="fname"
+															id='fname-label'
+															name="fname-label"
 															value={formData.fname}
 															placeholder="Enter your first name"
 															className="form-control"
@@ -224,15 +226,15 @@ const Registration = () => {
 												<div className="col-md-6">
 													<div className="form-group">
 														<label
-															id="name-label"
 															className="mb-1"
-															for="name"
+															for="lname-label"
 														>
 															Last Name
 														</label>
 														<input
 															type="text"
-															name="lname"
+															id='lname-label'
+															name="lname-label"
 															className="form-control"
 															value={formData.lname}
 															placeholder="Enter your last name"
@@ -254,6 +256,7 @@ const Registration = () => {
 															id="company-name"
 															className="mb-1"
 															for="company-name"
+															htmlFor="company-name"
 														>
 															Company Name
 														</label>
@@ -280,6 +283,7 @@ const Registration = () => {
 														id="email-label"
 														className="mb-1"
 														for="email"
+														htmlFor="email"
 													>
 														Email
 													</label>
@@ -309,6 +313,7 @@ const Registration = () => {
 														id="mobile-label"
 														className="mb-1"
 														for="mobile"
+														htmlFor="mobile"
 													>
 														Mobile
 													</label>
@@ -340,10 +345,9 @@ const Registration = () => {
 										<div className="row mt-3">
 											<div className="col-md-12">
 												<label
-													id="address-label"
 													className="mb-1"
-													htmlFor="address-label"
-												>
+													for="address-label"
+													>
 													Address
 												</label>
 												<PlacesAutocomplete
@@ -362,9 +366,10 @@ const Registration = () => {
 																{...getInputProps({
 																	placeholder: 'Enter address',
 																	className:
-																		'location-search-input form-control',
+																	'location-search-input form-control',
 																	required: true,
 																})}
+																id="address-label"
 															/>
 															{loading && <div>Loading...</div>}
 															{suggestions &&
@@ -409,7 +414,6 @@ const Registration = () => {
 											<div className="col-md-4">
 												<div className="form-group">
 													<label
-														id="city-label"
 														className="mb-1"
 														for="city-label"
 													>
@@ -435,6 +439,7 @@ const Registration = () => {
 																			'location-search-input form-control',
 																		required: true,
 																	})}
+																	id="city-label"
 																/>
 																{loading && <div>Loading...</div>}
 																{suggestions &&
@@ -466,7 +471,7 @@ const Registration = () => {
 											<div className="col-md-3">
 												<div className="form-group">
 													<label
-														id="state-label"
+														
 														className="mb-1"
 														for="state-label"
 													>
@@ -492,6 +497,7 @@ const Registration = () => {
 																			'location-search-input form-control',
 																		required: true,
 																	})}
+																	id="state-label"
 																/>
 																{loading && <div>Loading...</div>}
 																{suggestions &&
@@ -523,7 +529,6 @@ const Registration = () => {
 											<div className="col-md-3">
 												<div className="form-group">
 													<label
-														id="postal-label"
 														className="mb-1"
 														for="postal-label"
 													>
@@ -549,6 +554,7 @@ const Registration = () => {
 														id="password-label"
 														className="mb-1"
 														for="password"
+														htmlFor="password"
 													>
 														Password
 													</label>

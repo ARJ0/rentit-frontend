@@ -101,7 +101,7 @@ const EditEquipmentModal = ({closeModal, selecetedItem}) => {
                         <div className="row">
                             <div className="col-md-6 mb-4">
                                 <div className="form-group">
-                                    <label htmlFor="image" className="mb-3">Image :</label>
+                                    <label for="image" className="mb-3">Image :</label>
                                     {!preview ? (
                                         <div className="avatar"></div>
                                     ) : (
@@ -110,8 +110,8 @@ const EditEquipmentModal = ({closeModal, selecetedItem}) => {
                                     <label htmlFor="image" className="btn btn-primary">
                                         <CloudUploadIcon className="me-2" /> Upload Image
                                         <input
-                                            id="image"
-                                            type="file"
+                                           id="image"
+                                           type="file"
                                             className="form-control visually-hidden"
                                             onChange={(e) => handleFile(e)}
                                         />
@@ -155,6 +155,7 @@ const EditEquipmentModal = ({closeModal, selecetedItem}) => {
                                     <Select
                                         id="category"
                                         className="select"
+                                        aria-label="category"
                                         options={equipmentCategories}
                                         onChange={(selectedOptions) =>
                                             setCategory(selectedOptions.value)

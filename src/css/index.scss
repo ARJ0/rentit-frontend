@@ -2,7 +2,7 @@ $lblue :#7AACDC;
 $dblue : #05396B;
 
 $lyellow :#F3E0D2;
-$dyellow : #C28949;
+$dyellow : #2F4858;
 
 $lgreen :#D5F3D2;
 $dgreen : #53C249;
@@ -25,15 +25,6 @@ img{
     // filter: invert(1) hue-rotate(180deg) !important;
 }
 
-
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-
-    // outline: blue 1px solid;
-}
 .logo{
     display: flex;
     gap: .3em;
@@ -57,10 +48,6 @@ img{
     // height: 60px;
 }
 
-
-body{
-    font-family: 'Poppins', sans-serif;
-}
 
 
 h1,h2,h3,h4{
