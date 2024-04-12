@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import SearchIcon from '@mui/icons-material/Search';
 import FilterAltIcon from '@mui/icons-material/FilterAlt';
+import { Row, Col } from "react-bootstrap";
 import Select from "react-select";
 import EquipmentCard from "../components/EquipmentCard";
 import { getAllAndSearchEquipment } from "../services/actionCreator";
@@ -9,13 +10,14 @@ import { equipmentCategories, equipmentCategoriesTypeName } from "../services/he
 import Loader from "../services/Loader";
 import moment from "moment";
 import EquipmentModal from "../components/EquipmentModal";
+
 // import './test.scss'
 
 const sortOp = [
-  {label: "A-Z" , value: 1},
-  {label: "Z-A" , value: 2},
-  {label: "Low to High" , value: 3},
-  {label: "High to Low" , value: 4},
+  { label: "A-Z", value: 1 },
+  { label: "Z-A", value: 2 },
+  { label: "Low to High", value: 3 },
+  { label: "High to Low", value: 4 },
 ]
 
 const Explore = () => {
@@ -36,21 +38,21 @@ const Explore = () => {
   const closeModal = () => {
     setIsOpen(false);
     setSelecetedItem(null);
-      // get()
+    // get()
 
   }
 
-  const getEquipment = (_searchTerm=null) => {
+  const getEquipment = (_searchTerm = null) => {
     setIsLoading(true);
     let req = {
       category
     };
     if (_searchTerm || searchTerm) {
-      req.keyword =  _searchTerm || searchTerm
+      req.keyword = _searchTerm || searchTerm
     }
     if (sortBy) {
-      req.sortBy = [3,4].includes(sortBy.value) ? "rent" : "title";
-      req.sortOrder = [1,3].includes(sortBy.value) ? "asc" : "desc";
+      req.sortBy = [3, 4].includes(sortBy.value) ? "rent" : "title";
+      req.sortOrder = [1, 3].includes(sortBy.value) ? "asc" : "desc";
     }
 
     getAllAndSearchEquipment(req)
@@ -78,11 +80,11 @@ const Explore = () => {
       category
     };
     if (_searchTerm) {
-      req.keyword =  _searchTerm;
+      req.keyword = _searchTerm;
     }
     if (sortBy) {
-      req.sortBy = [3,4].includes(sortBy.value) ? "rent" : "title";
-      req.sortOrder = [1,3].includes(sortBy.value) ? "asc" : "desc";
+      req.sortBy = [3, 4].includes(sortBy.value) ? "rent" : "title";
+      req.sortOrder = [1, 3].includes(sortBy.value) ? "asc" : "desc";
     }
 
     getAllAndSearchEquipment(req)
@@ -105,7 +107,7 @@ const Explore = () => {
       _getSearchData(q)
     }, 500)
     setSearchTimeout(timeout);
-}
+  }
 
   useEffect(() => {
     getEquipment();
@@ -122,6 +124,7 @@ const Explore = () => {
                 className="form-control"
                 placeholder="Search equipment..."
                 value={searchTerm}
+                aria-label="Search equipment"
                 onChange={onSearchTextChanged}
               />
               <span className="input-group-text">
@@ -133,11 +136,12 @@ const Explore = () => {
             <div className={`pill blue filterpill`}>
               <FilterAltIcon sx={{ fontSize: 30 }} />
             </div>
-            <div className='pill' style={{"min-width": "10%"}}>
-              <Select 
+            <div className='pill' style={{ "min-width": "10%" }}>
+              <Select
                 className="select"
                 options={sortOp}
                 onChange={(e) => setSortBy(e)}
+                aria-label="Sort options"
               />
             </div>
             {equipmentCategories.map((op) => (
@@ -152,47 +156,52 @@ const Explore = () => {
             ))}
           </div>
         </div>
-        <div className="container-fluid">
-          <ul>
-            {equipment.length > 0 ?
-              equipment.map((info, index) => {
-                return (
-                  <li className="booking-card text-capitalize" style={{ "background-image": `url(${info.image})` }}>
-                    <div className="book-container">
-                      <div className="content">
-                        <button className="btn" onClick={() => openModal(info)}>Add To Bag</button>
-                      </div>
-                    </div>
-                    <div className="informations-container">
-                      <h2 className="title text-capitalize">{info.title}</h2>
-                      <p className="sub-title">{equipmentCategoriesTypeName[info.category]}</p>
-                      <p className="price"><svg className="icon" style={{ "width": "24px", "height": "24px" }} viewBox="0 0 24 24">
-                        <path fill="currentColor" d="M3,6H21V18H3V6M12,9A3,3 0 0,1 15,12A3,3 0 0,1 12,15A3,3 0 0,1 9,12A3,3 0 0,1 12,9M7,8A2,2 0 0,1 5,10V14A2,2 0 0,1 7,16H17A2,2 0 0,1 19,14V10A2,2 0 0,1 17,8H7Z" />
-                      </svg>${info.rent.toFixed(2)} {info.timeperiod}</p>
-                      <div className="more-information">
-                        <div className="info-and-date-container text-capitalize">
-                          {info.unavailableUntil && <div className="box info">
-                            <svg className="icon" style={{ "width": "24px", "height": "24px" }} viewBox="0 0 24 24">
-                              <path fill="currentColor" d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z" />
-                            </svg>
-                            <p>{`Sorry, this equipment is currently unavailable. Until ${moment(info.unavailableUntil).format('LL')}`}</p>
-                          </div>}
-                         {!info.unavailableUntil && <div className="box date">
-                            <svg className="icon" style={{ "width": "24px", "height": "24px" }} viewBox="0 0 24 24">
-                              <path fill="currentColor" d="M19,19H5V8H19M16,1V3H8V1H6V3H5C3.89,3 3,3.89 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5C21,3.89 20.1,3 19,3H18V1M17,12H12V17H17V12Z" />
-                            </svg>
-                            <p>This equipment is available for booking.</p>
-                          </div>}
+        <Row>
+          {equipment.length > 0 ? equipment.map((info, index) => (
+            <Col key={index} md={3} sm={6}>
+              <div className="booking-card mt-5 text-capitalize" style={{ backgroundImage: `url(${info.image})` }}>
+                <div className="book-container">
+                  <div className="content">
+                    <button className="btn" onClick={() => openModal(info)} disabled={info.unavailableUntil ? true : false}>Add To Bag</button>
+                  </div>
+                </div>
+                <div className="informations-container">
+                  <h2 className="title text-capitalize">{info.title}</h2>
+                  <p className="sub-title">{equipmentCategoriesTypeName[info.category]}</p>
+                  <p className="price">
+                    <svg className="icon" style={{ width: "24px", height: "24px" }} viewBox="0 0 24 24">
+                      <path fill="currentColor" d="M3,6H21V18H3V6M12,9A3,3 0 0,1 15,12A3,3 0 0,1 12,15A3,3 0 0,1 9,12A3,3 0 0,1 12,9M7,8A2,2 0 0,1 5,10V14A2,2 0 0,1 7,16H17A2,2 0 0,1 19,14V10A2,2 0 0,1 17,8H7Z" />
+                    </svg>
+                    ${info.rent.toFixed(2)} {info.timeperiod}
+                  </p>
+                  <div className="more-information">
+                    <div className="info-and-date-container text-capitalize">
+                      {info.unavailableUntil ? (
+                        <div className="box date" style={{ color: '#ff0000' }}>
+                          <svg className="icon" style={{ width: "24px", height: "24px" }} viewBox="0 0 24 24">
+                            <path fill="currentColor" d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z" />
+                          </svg>
+                          <p>{`Sorry, this equipment is currently unavailable. Until ${moment(info.unavailableUntil).format('LL')}`}</p>
                         </div>
-                      </div>
+                      ) : (
+                        <div className="box date">
+                          <svg className="icon" style={{ width: "24px", height: "24px" }} viewBox="0 0 24 24">
+                            <path fill="currentColor" d="M19,19H5V8H19M16,1V3H8V1H6V3H5C3.89,3 3,3.89 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5C21,3.89 20.1,3 19,3H18V1M17,12H12V17H17V12Z" />
+                          </svg>
+                          <p>This equipment is available for booking.</p>
+                        </div>
+                      )}
                     </div>
-                  </li>
-                )
-              }) : <div className="flex-col">
-                No Equipment
-              </div>}
-          </ul>
-        </div>
+                  </div>
+                </div>
+              </div>
+            </Col>
+          )) : (
+            <div className="flex-col">
+              No Equipment
+            </div>
+          )}
+        </Row>
       </div>
 
       {isOpen && selecetedItem &&

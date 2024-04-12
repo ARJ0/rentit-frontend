@@ -513,7 +513,7 @@
   max-width: 15ch;
   text-align: center;
   line-height: 7.2rem;
-  color: white;
+  color: #003D9F;
   text-shadow: 0px 0px 50px rgb(58, 58, 58);
 }
 .home .top .exploreBtn {
@@ -1407,7 +1407,6 @@
   z-index: 2;
   position: absolute;
   bottom: -20px;
-  font-family: "Roboto Mono", monospace;
   -webkit-animation: text 4s ease infinite;
           animation: text 4s ease infinite;
   width: 100px;
@@ -1549,7 +1548,6 @@ html {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
 }
 
 .logo {
@@ -1570,9 +1568,6 @@ html {
   width: 50px;
 }
 
-body {
-  font-family: "Poppins", sans-serif;
-}
 
 h1, h2, h3, h4 {
   font-weight: bolder;
@@ -1697,7 +1692,7 @@ a .active {
 
 .yellow {
   background-color: #F3E0D2;
-  color: #C28949;
+  color: #2F4858;
 }
 
 .red {
@@ -1983,7 +1978,6 @@ input[type=number] {
   background: #1a66ff;}
 
 .btn-model span {
-  font-family: 'Farsan', cursive;
   transition: transform 0.3s;
   display: inline-block;
   padding: 10px 20px;
@@ -2012,7 +2006,7 @@ input[type=number] {
 
 .btn-model .buy {z-index: 3; font-weight: bolder;}
 
-.btn-model:hover .price {transform: translateX(-110%);}
+.btn-model:hover .price {transform: translateX(-110%);} 
 
 .btn-model:hover .shopping-cart {transform: translateX(0%);}
 
@@ -2033,7 +2027,6 @@ input[type=number] {
 
 .info {
     background: rgba(27, 26, 26, 0.9);
-    font-family: 'Bree Serif', serif;
     transition: all 0.3s ease-out;
     transform: translateX(-100%);
     position: absolute;

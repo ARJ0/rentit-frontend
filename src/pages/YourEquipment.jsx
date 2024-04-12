@@ -159,6 +159,7 @@ export const YourEquipment = () => {
                 className="select"
                 options={sortOp}
                 onChange={(e) => setSortBy(e)}
+                aria-label="Sort options"
               />
             </div>
             {equipmentCategories.map((op) => (
@@ -175,12 +176,6 @@ export const YourEquipment = () => {
         </div>
 
         <div className="listProduct">
-          {/* {equipment.length > 0 ? equipment.map((info, index) => {
-            return <EquipmentCard info={info} key={index}  isEdit={true} get={get}/>
-          }) :
-            <div className="flex-col">
-              No Equipment
-            </div>} */}
 
 <div className="container">
   <div className="row">
@@ -204,17 +199,18 @@ export const YourEquipment = () => {
             <td>{index+1}</td>
             <td>
               <div className='d-flex align-items-center'>
-              <img src={info.image} alt="" className="rounded-circle" style={{"width": "100px",  "height": "100px"}} />
+              <img src={info.image} alt={`${index}`} className="rounded-circle" style={{"width": "100px",  "height": "100px"}} />
               </div>
             </td>
             <td>{info.title}</td>
             <td>{equipmentCategoriesTypeName[info.category]}</td>
             <td>${info.rent.toFixed(2)} {info.timeperiod}</td>
             <td>
-              <button className='btn' onClick={() => openModal(info)}><EditIcon sx={{ fontSize: 30 }} /></button>
-              {/* <button className='btn' onClick={() => _deleteEquipment(info)} ><DeleteForeverIcon sx={{ fontSize: 30 }} /></button> */}
+              <button className='btn' aria-label="Edit" onClick={() => openModal(info)}><EditIcon sx={{ fontSize: 30 }} /></button>
               <FormControlLabel
                 control={<IOSSwitch sx={{ m: 1 }} defaultChecked={!info.isDeleted} onChange={() => _deleteEquipment(info, !info.isDeleted)} />}
+                label=""
+                aria-label="Delete Equipment"
               />
             </td>
           </tr>
