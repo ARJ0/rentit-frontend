@@ -41,27 +41,27 @@ const Header = () => {
   const [isRequestSideBar, setRequestSideBar] = useState(false);
   const [isHistory, setIsHistory] = useState(false);
 
-  const historySidebar = () => {
+  const historySidebar = (istoggleNav = false) => {
     setIsHistory(true);
-    toggleNav()
+    istoggleNav && toggleNav()
   };
 
   const closeHistorySidebar = () => {
     setIsHistory(false);
   };
 
-  const openSidebar = () => {
+  const openSidebar = (istoggleNav) => {
     setIsSidebarOpen(true);
-    toggleNav()
+    istoggleNav && toggleNav()
   };
 
   const closeSidebar = () => {
     setIsSidebarOpen(false);
   };
 
-  const openRequestSideBar = () => {
+  const openRequestSideBar = (istoggleNav) => {
     setRequestSideBar(true);
-    toggleNav()
+    istoggleNav && toggleNav()
   };
 
   const closeRequestSideBar = () => {
@@ -176,19 +176,31 @@ const Header = () => {
           {flag.user && userData?._id && (
             <>
               <li className='nav-item'>
-                <button className='btn border-0 text-white' style={{"font-size": "18px"}} value='bag icon' onClick={() => { openSidebar() }}>
+                <button className='btn border-0 text-white' style={{"font-size": "18px"}} value='bag icon' onClick={() => { openSidebar(true) }}>
                 Bag  <ShoppingBagIcon className='text-white' sx={{ fontSize: 30 }} />
                 </button>
               </li>
               <li className="nav-item">
-                <button className="btn border-0 text-white" style={{"font-size": "18px"}} onClick={() => { openRequestSideBar() }}>
+                <button className="btn border-0 text-white" style={{"font-size": "18px"}} onClick={() => { openRequestSideBar(true) }}>
                 Message <MessageIcon className='text-white' sx={{ fontSize: 30 }} />
                 </button>
               </li>
               <li className="nav-item">
-                <button className="btn border-0 text-white" style={{"font-size": "18px"}} onClick={() => { historySidebar() }}>
+                <button className="btn border-0 text-white" style={{"font-size": "18px"}} onClick={() => { historySidebar(true) }}>
                 History <HistoryIcon className='text-white' sx={{ fontSize: 30 }} />
                 </button>
+              </li>
+               <li className="nav-item">
+                <a href="/AboutUs" className="nav-link text-white">About Us</a>
+              </li>
+               <li className="nav-item">
+                <a href="/FAQ" className="nav-link text-white">FAQs</a>
+              </li>
+               <li className="nav-item">
+                <a href="/Careers" className="nav-link text-white">Careers</a>
+              </li>
+               <li className="nav-item">
+                <a href="/ContactUs" className="nav-link text-white">Contact</a>
               </li>
             </>
           )}
